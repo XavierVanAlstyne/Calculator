@@ -1,48 +1,44 @@
 
-function value1() {
-    let input1 = document.getElementById('txt1').value
-    let input2 = parseInt(input1);
-    return input2
-}
-function value2() {
-    let input1 = parseInt(document.getElementById('txt2').value)
-    return input1
-}
+const firstNumber = function() {
+    return parseInt(document.getElementById('num1').value);
+};
+const secondNumber = function() {
+    return parseInt(document.getElementById('num2').value);
+};
 
-function DOM(x){
-    let DOM = document.getElementById('p1')
-    DOM.innerHTML = 'The result is ' + x + '.';
-}
+const displayResult = function(x){
+    let output = document.getElementById('p1');
+    output.innerHTML = 'The result is ' + x + '.';
+};
 
-let multiply = function () {
-    let result = value1()*value2();
-    DOM(result)
+const multiply = function () {
+    let result = firstNumber()*secondNumber();
+    displayResult(result);
 
 };
-let divide = function(){
-    let math = value1()/value2();
-    let result = math.toFixed(10)
-    DOM(result)
-}
-let add = function(){
-    let result = value1()+value2();
-    DOM(result)
+const divide = function(){
+    let math = firstNumber()/secondNumber();
+    let result = math.toFixed(2);
+    displayResult(result);
+};
+const add = function(){
+    let result = firstNumber()+secondNumber();
+    displayResult(result);
+};
+const subtract = function(){
+    let result = firstNumber()-secondNumber();;
+    displayResult(result);
+};
 
-}
-let subtract = function(){
-    let result = value1()-value2();
-    DOM(result)
-}
-
-function findOperator() {
+const findOperator = function() {
     let operator = document.getElementById("prob1").value
     if (operator === "add"){
-        add()
+        add();
     } else if (operator === "subtract"){
-        subtract()
+        subtract();
     } else if (operator === "multiply"){
-        multiply()
+        multiply();
     } else if (operator === "divide"){
-        divide()
-    }
+        divide();
+    };
 }
