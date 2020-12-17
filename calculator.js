@@ -1,5 +1,4 @@
 
-
 function value1() {
     let input1 = document.getElementById('txt1').value
     let input2 = parseInt(input1);
@@ -36,14 +35,14 @@ let subtract = function(){
 }
 
 function findOperator() {
-    let operater = document.getElementById("prob1").value
-    if (operater === "add"){
+    let operator = document.getElementById("prob1").value
+    if (operator === "add"){
         add()
-    } else if (operater === "subtract"){
+    } else if (operator === "subtract"){
         subtract()
-    } else if (operater === "multiply"){
+    } else if (operator === "multiply"){
         multiply()
-    } else if (operater === "divide"){
+    } else if (operator === "divide"){
         divide()
     }
 }
