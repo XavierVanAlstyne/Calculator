@@ -11,34 +11,35 @@ const displayResult = function(x){
     output.innerHTML = 'The result is ' + x + '.';
 };
 
-const multiply = function () {
-    let result = firstNumber()*secondNumber();
-    displayResult(result);
+const math = {
+    'divide': function(){
+        let result = firstNumber()/secondNumber();
+        displayResult(result.toFixed(2));
+    },
+    'multiply': function () {
+        let result = firstNumber()*secondNumber();
+        displayResult(result);
+    },
+    'add': function(){
+        let result = firstNumber()+secondNumber();
+        displayResult(result);
+    },
+    'subtract': function(){
+        let result = firstNumber()-secondNumber();;
+        displayResult(result);
+    }
+}
 
-};
-const divide = function(){
-    let math = firstNumber()/secondNumber();
-    let result = math.toFixed(2);
-    displayResult(result);
-};
-const add = function(){
-    let result = firstNumber()+secondNumber();
-    displayResult(result);
-};
-const subtract = function(){
-    let result = firstNumber()-secondNumber();;
-    displayResult(result);
-};
 
 const findOperator = function() {
     let operator = document.getElementById("prob1").value
     if (operator === "add"){
-        add();
+        math.add();
     } else if (operator === "subtract"){
-        subtract();
+        math.subtract();
     } else if (operator === "multiply"){
-        multiply();
+        math.multiply();
     } else if (operator === "divide"){
-        divide();
+        math.divide();
     };
 }
