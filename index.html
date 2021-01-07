@@ -2,14 +2,15 @@
 <body>
     <div>Problem 1</div>
     <input id="num1"></input>
-    <select name="problem 1" id="prob1">
+    <select id="problem1">
         <option value="add">+</option>
         <option value="subtract">-</option>
         <option value="multiply">*</option>
         <option value="divide">/</option>
+        <option value="exponent">^</option>
     </select>
     <input id="num2"></input>
-    <button onclick="findOperator()" type="submit" value="Submit" id="btn">Submit</button>
-    <div id="p1"></div>
+    <button onclick="findOperator()" type="submit" id="btn">Calculate</button>
+    <div id="output"></div>
     <script src="calculator.js"></script>
 </body>

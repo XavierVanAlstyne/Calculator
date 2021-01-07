@@ -7,32 +7,37 @@ const secondNumber = function() {
 };
 
 const displayResult = function(x){
-    let output = document.getElementById('p1');
+    let output = document.getElementById('output');
     output.innerHTML = 'The result is ' + x + '.';
 };
 
 const math = {
-    'divide': function(){
+    'divide': function() {
         let result = firstNumber()/secondNumber();
         displayResult(result.toFixed(2));
     },
-    'multiply': function () {
+    'multiply': function() {
         let result = firstNumber()*secondNumber();
         displayResult(result);
     },
-    'add': function(){
+    'add': function() {
         let result = firstNumber()+secondNumber();
         displayResult(result);
     },
-    'subtract': function(){
+    'subtract': function() {
         let result = firstNumber()-secondNumber();;
         displayResult(result);
+    },
+    'exponential': function() {
+        let result = Math.pow(firstNumber(), secondNumber()) 
+        displayResult(result)
     }
+
 }
 
 
 const findOperator = function() {
-    let operator = document.getElementById("prob1").value
+    let operator = document.getElementById("problem1").value
     if (operator === "add"){
         math.add();
     } else if (operator === "subtract"){
@@ -41,5 +46,7 @@ const findOperator = function() {
         math.multiply();
     } else if (operator === "divide"){
         math.divide();
-    };
+    } else if (operator === 'exponent'){
+        math.exponential();
+    }
 }
