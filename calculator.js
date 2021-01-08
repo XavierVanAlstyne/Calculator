@@ -1,4 +1,5 @@
 
+
 const firstNumber = function() {
     return parseInt(document.getElementById('num1').value);
 };
@@ -6,10 +7,32 @@ const secondNumber = function() {
     return parseInt(document.getElementById('num2').value);
 };
 
-const displayResult = function(x){
-    let output = document.getElementById('output');
-    output.innerHTML = 'The result is ' + x + '.';
-};
+
+const checkIfNumber = function() {
+    if (isNaN(firstNumber() && secondNumber()) === true){
+        let error = document.getElementById('output')
+        error.innerHTML = "Must input a number!"
+    } else {
+        findOperator();
+    }
+}
+
+
+const findOperator = function() {
+    let operator = document.getElementById("problem1").value
+    if (operator === "add"){
+        math.add();
+    } else if (operator === "subtract"){
+        math.subtract();
+    } else if (operator === "multiply"){
+        math.multiply();
+    } else if (operator === "divide"){
+        math.divide();
+    } else if (operator === 'exponent'){
+        math.exponential();
+    }
+}
+
 
 const math = {
     'divide': function() {
@@ -32,21 +55,10 @@ const math = {
         let result = Math.pow(firstNumber(), secondNumber()) 
         displayResult(result)
     }
-
 }
 
 
-const findOperator = function() {
-    let operator = document.getElementById("problem1").value
-    if (operator === "add"){
-        math.add();
-    } else if (operator === "subtract"){
-        math.subtract();
-    } else if (operator === "multiply"){
-        math.multiply();
-    } else if (operator === "divide"){
-        math.divide();
-    } else if (operator === 'exponent'){
-        math.exponential();
-    }
-}
+const displayResult = function(x){
+    let output = document.getElementById('output');
+    output.innerHTML = 'The result is ' + x + '.';
+};
