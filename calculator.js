@@ -36,23 +36,23 @@ const findOperator = function() {
 
 
 const math = {
-    'divide': function() {
+    divide: function() {
         let result = firstNumber()/secondNumber();
         displayResult(result.toFixed(2));
     },
-    'multiply': function() {
+    multiply: function() {
         let result = firstNumber()*secondNumber();
         displayResult(result);
     },
-    'add': function() {
+    add: function() {
         let result = firstNumber()+secondNumber();
         displayResult(result);
     },
-    'subtract': function() {
+    subtract: function() {
         let result = firstNumber()-secondNumber();;
         displayResult(result);
     },
-    'exponential': function() {
+    exponential: function() {
         let result = Math.pow(firstNumber(), secondNumber()) 
         displayResult(result)
     }
