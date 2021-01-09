@@ -1,5 +1,3 @@
-
-
 const firstNumber = function() {
     return parseInt(document.getElementById('num1').value);
 };
@@ -7,9 +5,12 @@ const secondNumber = function() {
     return parseInt(document.getElementById('num2').value);
 };
 
+const notNumber = function (a,b) {
+    return isNaN(a || b)
+}
 
 const checkIfNumber = function() {
-    if (isNaN(firstNumber() && secondNumber()) === true){
+    if (notNumber(firstNumber(),secondNumber())){
         let error = document.getElementById('output')
         error.innerHTML = "Must input a number!"
     } else {
