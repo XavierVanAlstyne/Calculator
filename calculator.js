@@ -1,3 +1,10 @@
+document.addEventListener('keyup', function(event){
+    if (event.code === 'Enter') {
+        let button = document.getElementById('btn');
+        button.click();
+    }
+})
+
 const firstNumber = function() {
     return parseInt(document.getElementById('num1').value);
 };
@@ -6,7 +13,7 @@ const secondNumber = function() {
 };
 
 const notNumber = function (a,b) {
-    return isNaN(a || b)
+    return isNaN(a && b)
 }
 
 const checkIfNumber = function() {
@@ -55,7 +62,8 @@ const math = {
     exponential: function() {
         let result = Math.pow(firstNumber(), secondNumber()) 
         displayResult(result)
-    }
+    },
+
 }
 
 
